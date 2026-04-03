@@ -23,8 +23,7 @@ After installation, Claude will automatically use the Flows app development guid
 Claude Code auto-updates plugins at startup. To manually update:
 
 ```
-/plugin marketplace update spacelift-flows
-/plugin update
+/plugin marketplace update spacelift-flows-apps
 ```
 
 ## Developing
