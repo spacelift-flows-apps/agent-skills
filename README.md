@@ -10,10 +10,10 @@ When installed, Claude automatically loads the Flows app development skill whene
 
 ```bash
 # Add the marketplace (one-time)
-claude plugin marketplace add spacelift-io/flows-apps-agent-skills
+claude plugin marketplace add spacelift-flows-apps/agent-skills
 
 # Install the plugin
-claude plugin install flows-app-dev@spacelift-flows
+claude plugin install flows-app-dev@spacelift-flows-apps
 ```
 
 After installation, Claude will automatically use the Flows app development guidance whenever you're working on a Flows app.
