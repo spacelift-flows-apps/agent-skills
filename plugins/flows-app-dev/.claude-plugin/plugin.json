@@ -1,7 +1,7 @@
 {
   "name": "flows-app-dev",
   "description": "Guidance for building Spacelift Flows apps - auto-loads when working on Flows app repos",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Spacelift"
   },

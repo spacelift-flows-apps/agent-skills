@@ -279,6 +279,7 @@ It's not worth it providing those for fields that are very dynamic, and the user
 - When creating blocks for a subset of an api, or handlers for a subset of webhooks, always add "escape hatch blocks".
   - A block for making authenticated well–structured requests to any api endpoint.
   - A block for receiving any/all valid webhooks.
+- For blocks which are semantically entrypoints for a Flow (e.g. event subscription blocks), mark them as `entrypoint: true`.
 
 ## Extension Guidelines
 
