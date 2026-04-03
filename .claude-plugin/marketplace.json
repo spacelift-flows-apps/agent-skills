@@ -1,0 +1,16 @@
+{
+  "name": "spacelift-flows-apps",
+  "owner": {
+    "name": "Spacelift"
+  },
+  "metadata": {
+    "description": "Agent skills for building Spacelift Flows apps"
+  },
+  "plugins": [
+    {
+      "name": "flows-app-dev",
+      "source": "./plugins/flows-app-dev",
+      "description": "Auto-loaded guidance for building Spacelift Flows apps"
+    }
+  ]
+}

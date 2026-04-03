@@ -1,0 +1,10 @@
+{
+  "name": "flows-app-dev",
+  "description": "Guidance for building Spacelift Flows apps - auto-loads when working on Flows app repos",
+  "version": "1.0.0",
+  "author": {
+    "name": "Spacelift"
+  },
+  "homepage": "https://github.com/spacelift-io/flows-apps-agent-skills",
+  "repository": "https://github.com/spacelift-io/flows-apps-agent-skills"
+}
