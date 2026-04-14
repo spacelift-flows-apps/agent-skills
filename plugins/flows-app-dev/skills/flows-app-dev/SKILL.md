@@ -106,7 +106,9 @@ const exampleBlock: AppBlock = {
       name: "Output Name",
       description: "Output description",
       type: {
-        /* JSON Schema */
+        type: "object",
+        properties: { /* ... */ },
+        additionalProperties: true,
       },
     },
   },
@@ -131,6 +133,7 @@ const baseUrl = input.app.config.baseUrl as string;
 ### Schema
 
 - Make sure to properly mark required field as required in the schema (whether config field, or event output).
+- Always set `additionalProperties` explicitly on JSON schema objects (input config, output types, etc.). Use `additionalProperties: true` for extensible configs (the common case) and `additionalProperties: false` only when you need strict validation that rejects unknown fields. Omitting `additionalProperties` causes a mismatch: JSON Schema validation silently allows extra properties, but the frontend type generator produces a strict TypeScript type that doesn't reflect this.
 
 ## Development Workflow
 
