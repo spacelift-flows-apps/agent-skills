@@ -261,9 +261,27 @@ It's not worth it providing those for fields that are very dynamic, and the user
 
 ### Error Handling
 
-- Let errors bubble up naturally - don't catch and wrap them
-- Use descriptive error messages
-- The framework will handle error catching and reporting
+- Let errors bubble up naturally — don't catch and wrap them. The platform
+  catches unhandled errors in all handlers (`onSync`, `onDrain`, `onEvent`,
+  `onInternalMessage`, `onRequest`, etc.) and reports them automatically.
+- **Don't** catch errors just to wrap them as failures:
+  ```typescript
+  // BAD — the platform already does this for you
+  try {
+    await someOperation();
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    return { newStatus: "failed", customStatusDescription: `Failed: ${message}` };
+  }
+
+  // GOOD — just call it, let it throw
+  await someOperation();
+  ```
+- Returning `{ newStatus: "failed", customStatusDescription: ... }` is for
+  **validation failures** (e.g., invalid config values, specific HTTP status
+  codes from an external service), not for wrapping runtime errors.
+- Only catch errors when you need to take a specific alternative action, like
+  best-effort cleanup in `onDrain` where you log and continue regardless.
 
 ### Security
 
